@@ -9,8 +9,5 @@ cough = False
 shortness_of_breath = False
 fever = False
 
-#This is Hady's next line of code
-temp = 105
 
-if(temp > 100.4):
-    fever = True
+print(cough, shortness_of_breath, fever)
