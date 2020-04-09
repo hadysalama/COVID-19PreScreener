@@ -1,0 +1,30 @@
+{% extends 'dashboard/main.html' %}
+{% block content %}
+
+<main class="page">
+        <section class="portfolio-block">
+            <div class="container">
+                <div class="heading" style="margin-bottom: 40px;">
+                    <h2>COVID-19 Pre-Scanner form</h2>
+                    <p>Select all conditions you are currently or have been experiencing.</p>
+                </div>
+                <form>
+                    <h3>Common Sympotms</h3>
+                    <div class="form-group"><label for="subject"><input type="checkbox" style="margin-right: 10px;">Cough</label></div>
+                    <div class="form-group"><label for="subject"><input type="checkbox" style="margin-right: 10px;">Shortness of Breath</label></div>
+                    <div class="form-group"><label for="subject"><input type="checkbox" style="margin-right: 10px;">Fever &gt; 100.4</label></div>
+                    <h3>Other Factors</h3>
+                    <div class="form-group"><label for="subject"><input type="checkbox" style="margin-right: 10px;">Traveled recently to a highly impacted area (past 2 weeks)</label></div>
+                    <div class="form-group"><label for="subject"><input type="checkbox" style="margin-right: 10px;">In contact with anyone testing positive for COVID-19</label></div>
+                    <div class="form-group"><label for="subject"><input type="checkbox" style="margin-right: 10px;">In contact with a family member testing positive for COVID-19 outside healthcare facility</label></div>
+                    <div class="form-group"><label for="subject"><input type="checkbox" style="margin-right: 10px;">Consistently followed precautions recommended by your government</label></div>
+                    <div class="form-group"><label for="subject"><input type="checkbox" style="margin-right: 10px;">Been in contact with someone who tested positive for COVID-19</label></div>
+                    <div class="form-group"><label for="subject"><input type="checkbox" style="margin-right: 10px;">Been in confined space with someone testing positive for COVID-19 <br><strong>(came within 6 feet of the person)</strong></label><label for="subject"><input type="checkbox" style="margin-right: 10px;">Been in confined space with someone testing positive for COVID-19 <br><strong>(stayed at least 6 feet away the person)</strong></label></div>
+                    <div
+                        class="form-group"><button class="btn btn-primary btn-block" type="submit">Submit</button></div>
+            </form>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}
