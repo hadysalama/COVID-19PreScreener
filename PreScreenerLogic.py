@@ -8,3 +8,10 @@ Personal Project
 cough = False
 shortness_of_breath = False
 fever = False
+
+#This is Hady's next line of code
+temperature = 105
+temperature = False
+
+if(temperature > 100.4):
+    temperature = True
