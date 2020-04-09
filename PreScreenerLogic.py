@@ -4,5 +4,7 @@ Created on Sunday 4/9/20 ‏‎1:15:00 AM
 Personal Project
 """
 
-# this is jacks super complex code
+# Important symptoms
 cough = False
+shortness_of_breath = False
+fever = False
