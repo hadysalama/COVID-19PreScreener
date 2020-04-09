@@ -10,8 +10,7 @@ shortness_of_breath = False
 fever = False
 
 #This is Hady's next line of code
-temperature = 105
-temperature = False
+temp = 105
 
-if(temperature > 100.4):
-    temperature = True
+if(temp > 100.4):
+    fever = True
