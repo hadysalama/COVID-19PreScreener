@@ -6,8 +6,6 @@ Personal Project
 
 # Important symptoms
 cough = False
-shortness_of_breath = False
+sob = False
 fever = False
 
-
-print(cough, shortness_of_breath, fever)
