@@ -1,3 +1,9 @@
+"""
+Created on Thursday 4/9/20 ‏‎1:30:00 AM
+@authors: Hady S. Salama and Jack R. Lynch
+Personal Project
+"""
+
 from django.shortcuts import render
 
 def home(request):
