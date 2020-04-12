@@ -1,1 +1,9 @@
-{"short_name":"COVID Scanner","name":"COVID-19 PreScanner","icons":[],"start_url":"/home.html","background_color":"rgb(43,116,213)","display":"fullscreen","orientation":"portrait"}
+{
+    "short_name":"COVID PreScanner",
+    "name":"COVID-19 PreScanner",
+    "icons":[],
+    "start_url":"",
+    "background_color":"rgb(43,116,213)",
+    "display":"fullscreen",
+    "orientation":"portrait"
+}
