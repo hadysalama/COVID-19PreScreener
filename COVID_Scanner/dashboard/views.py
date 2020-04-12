@@ -1,14 +1,6 @@
 from django.shortcuts import render
 
 def home(request):
-<<<<<<< HEAD
-    context = {}
-    return render(request, 'dashboard/home.html', context)
-
-def about(request):
-    context = {}
-    return render(request, 'dashboard/about.html', context)
-=======
 
     # Important symptoms
     cough = False # Dry Cough
@@ -41,4 +33,3 @@ def about(request):
 
     context = {}
     return render(request, 'dashboard/home.html', context)
->>>>>>> f7e61110e25b35eeacf4d2715058d4db4e9e7b8f
