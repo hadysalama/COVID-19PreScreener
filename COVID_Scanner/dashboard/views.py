@@ -10,12 +10,8 @@ from django.shortcuts import render
 def home(request):
     risk = ""
     actions = ""
-<<<<<<< HEAD
     cc_actions = ""
     gettest = False
-=======
-    get_test = False
->>>>>>> 6011933bf472a1e0cbadf5e2f3764da4b5d68bda
 
     if request.method == 'POST':
         prescreen_checks = request.POST.getlist('covid-check')
@@ -28,19 +24,11 @@ def home(request):
         fever = "fever" in prescreen_checks
 
         # Checks if the user has a Cleveland Clinic Identified High Risk Condition.
-<<<<<<< HEAD
         cc_highrisk = request.POST.get("cchighrisk")
         if cc_highrisk is not "none":
             cc_highrisk = True
         else:
             cc_highrisk = False
-=======
-        cchighrisk = request.POST.get("cchighrisk")
-        if cchighrisk is not "None":
-            cchighrisk = True
-        else:
-            cchighrisk = False
->>>>>>> 6011933bf472a1e0cbadf5e2f3764da4b5d68bda
 
         # Higher Risk Options
         # User has traveled to an area heavily impacted by COVID-19.
@@ -122,11 +110,7 @@ def home(request):
                 else:
                     actions = "None"
 
-<<<<<<< HEAD
     context = {'risk': risk, 'actions': actions, 'cc_actions': cc_actions}
-=======
-    context = {'risk': risk, 'actions': actions, 'get-test': get_test}
->>>>>>> 6011933bf472a1e0cbadf5e2f3764da4b5d68bda
     return render(request, 'dashboard/home.html', context)
 
 
