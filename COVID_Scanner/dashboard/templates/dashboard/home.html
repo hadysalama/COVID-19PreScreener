@@ -8,7 +8,7 @@
                     <h2>COVID-19 Pre-Scanner form</h2>
                     <p>Select all conditions you are currently or have been experiencing.</p>
                 </div>
-                <form method="POST">
+                <form action="{% url 'actions' %}" method="POST">
                     {% csrf_token %}
                     <h3>Common Sympotms</h3>
                     <div class="form-group">
@@ -22,6 +22,25 @@
                     <div class="form-group">
                         <label for="fever">
                             <input name="covid-check" value="fever" type="checkbox" style="margin-right: 10px;">Fever &gt; 100.4</label>
+                    </div>
+
+                    <h3>High Risk Options (select one)</h3>
+                    <div class="form-group">
+                        <select class="form-control">
+                            <optgroup label="Choose what category applies to you">
+                                <option value="none" selected="">None</option>
+                                <option value="36-months">Age &lt; 36 months</option>
+                                <option value="36-months">Age &gt; 60 Years</option>
+                                <option value="immunosuppresive">Immunosuppressive therapy</option>
+                                <option value="cancer">Cancer</option>
+                                <option value="hypertension">Hypertension</option>
+                                <option value="coronary">Coronary Artery Disease</option>
+                                <option value="heart-failure">Heart failure reduced ejection fraction</option>
+                                <option value="lung-disease">Lung Disease</option>
+                                <option value="hiv-aids">HIV/AIDS</option>
+                                <option value="organ-transplant">Solid Organ Transplants</option>
+                            </optgroup>
+                        </select>
                     </div>
 
                     <h3>Other Factors</h3>
@@ -55,8 +74,6 @@
                         <button class="btn btn-primary btn-block" type="submit" name="Submit">Submit</button>
                     </div>
                 </form>
-                <div> <h3>{{risk}}</h3> </div>
-                <div> <h4>{{actions}}</h4> </div>
             </div>
         </section>
     </main>

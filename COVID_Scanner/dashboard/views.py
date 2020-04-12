@@ -6,11 +6,11 @@ Personal Project
 
 from django.shortcuts import render
 
-
 def home(request):
     risk = ""
     actions = ""
-    get_test = False
+    cc_actions = ""
+    gettest = False
 
     if request.method == 'POST':
         prescreen_checks = request.POST.getlist('covid-check')
@@ -23,11 +23,11 @@ def home(request):
         fever = "fever" in prescreen_checks
 
         # Checks if the user has a Cleveland Clinic Identified High Risk Condition.
-        cchighrisk = request.POST.get("cchighrisk")
-        if cchighrisk is not "None":
-            cchighrisk = True
+        cc_highrisk = request.POST.get("cchighrisk")
+        if cc_highrisk is not "none":
+            cc_highrisk = True
         else:
-            cchighrisk = False
+            cc_highrisk = False
 
         # Higher Risk Options
         # User has traveled to an area heavily impacted by COVID-19.
@@ -45,12 +45,15 @@ def home(request):
 
         # Symptomatic due to Cleveland Clinic Screening
         symptomatic = cough or shortness_of_breath or fever
+        gettest = (cough and fever and cc_highrisk) or (cough and shortness_of_breath and cc_highrisk) or (
+            fever and cc_highrisk) or (shortness_of_breath and cc_highrisk)
+
+        if gettest:
+            cc_actions = "Based on Cleveland Clinic guidelines, it is suggested you contact your doctor immediately."
+        else:
+            cc_actions = "The Cleveland Clinic does not recommend testing."
 
         # Nested ifs correspond to the CDC Tree Diagram
-
-        get_test = (cough and fever and cchighrisk) or (cough and shortness_of_breath and cchighrisk) or (
-            fever and cchighrisk) or (shortness_of_breath and cchighrisk)
-
         if travel:
             if lab_covid_case:
                 risk = "High Risk"
@@ -106,5 +109,10 @@ def home(request):
                 else:
                     actions = "None"
 
-    context = {'risk': risk, 'actions': actions, 'get-test': get_test}
+    context = {'risk': risk, 'actions': actions, 'cc_actions': cc_actions}
     return render(request, 'dashboard/home.html', context)
+
+
+def actions(request):
+    context = {}
+    return render(request, 'dashboard/actions.html', context)
