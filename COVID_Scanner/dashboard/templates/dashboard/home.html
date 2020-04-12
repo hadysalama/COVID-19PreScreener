@@ -8,6 +8,7 @@
                     <h2>COVID-19 Pre-Scanner form</h2>
                     <p>Select all conditions you are currently or have been experiencing.</p>
                 </div>
+<<<<<<< HEAD
                 <form>
                     <h3>Common Sympotms</h3>
                     <div class="form-group"><label for="subject"><input type="checkbox" style="margin-right: 10px;">Cough</label></div>
@@ -23,6 +24,55 @@
                     <div
                         class="form-group"><button class="btn btn-primary btn-block" type="submit">Submit</button></div>
             </form>
+=======
+                <form method="POST">
+                    {% csrf_token %}
+                    <h3>Common Sympotms</h3>
+                    <div class="form-group">
+                        <label for="cough">
+                            <input name="covid-check" value="cough" type="checkbox" style="margin-right: 10px;">Cough</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="sob">
+                            <input name="covid-check" value="sob" type="checkbox" style="margin-right: 10px;">Shortness of Breath</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="fever">
+                            <input name="covid-check" value="fever" type="checkbox" style="margin-right: 10px;">Fever &gt; 100.4</label>
+                    </div>
+
+                    <h3>Other Factors</h3>
+                    <div class="form-group">
+                        <label for="travel">
+                            <input name="covid-check" value="travel" type="checkbox" style="margin-right: 10px;">Traveled recently to a highly impacted area (past 2 weeks)</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-positive-case">
+                            <input name="covid-check" value="contact-positive-case" type="checkbox" style="margin-right: 10px;">In contact with anyone testing positive for COVID-19</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="family-contact-positive-case">
+                            <input name="covid-check" value="family-contact-positive-case" type="checkbox" style="margin-right: 10px;">In contact with a family member testing positive for COVID-19 outside healthcare facility</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="follow-precautions">
+                            <input name="covid-check" value="follow-precautions" type="checkbox" style="margin-right: 10px;">Consistently followed precautions recommended by your government</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="within-6-feet-positive-case">
+                            <input name="covid-check" value="within-6-feet-positive-case" type="checkbox" style="margin-right: 10px;">Been in confined space with someone testing positive for COVID-19
+                            <br><strong>(came within 6 feet of the person)</strong></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="more-6-feet-positive-case">
+                            <input name="covid-check" value="more-6-feet-positive-case" type="checkbox" style="margin-right: 10px;">Been in confined space with someone testing positive for COVID-19
+                            <br><strong>(stayed at least 6 feet away the person)</strong></label>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit" name="Submit">Submit</button>
+                    </div>
+                </form>
+>>>>>>> f7e61110e25b35eeacf4d2715058d4db4e9e7b8f
             </div>
         </section>
     </main>
