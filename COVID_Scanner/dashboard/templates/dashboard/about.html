@@ -1,0 +1,229 @@
+{% extends 'dashboard/main.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+	.team-boxed h2,
+	.team-clean h2 {
+		padding-top: 40px;
+		font-weight: 700
+	}
+
+	.team-boxed {
+		color: #313437;
+		background-color: #eef4f7
+	}
+
+	.team-boxed p {
+		color: #7d8285
+	}
+
+	.team-boxed h2 {
+		margin-bottom: 40px;
+		color: inherit
+	}
+
+	@media (max-width:767px) {
+		.team-boxed h2 {
+			margin-bottom: 25px;
+			padding-top: 25px;
+			font-size: 24px
+		}
+	}
+
+	.team-boxed .intro {
+		font-size: 16px;
+		max-width: 500px;
+		margin: 0 auto
+	}
+
+	.team-boxed .intro p {
+		margin-bottom: 0
+	}
+
+	.team-boxed .people {
+		padding: 50px 0
+	}
+
+	.team-boxed .item {
+		text-align: center
+	}
+
+	.team-boxed .item .box {
+		text-align: center;
+		padding: 30px;
+		background-color: #fff;
+		margin-bottom: 30px
+	}
+
+	.team-boxed .item .name {
+		font-weight: 700;
+		margin-top: 28px;
+		margin-bottom: 8px;
+		color: inherit
+	}
+
+	.team-boxed .item .title {
+		text-transform: uppercase;
+		font-weight: 700;
+		color: #d0d0d0;
+		letter-spacing: 2px;
+		font-size: 13px
+	}
+
+	.team-boxed .item .description {
+		font-size: 15px;
+		margin-top: 15px;
+		margin-bottom: 20px
+	}
+
+	.team-boxed .item img {
+		max-width: 160px
+	}
+
+	.team-boxed .social {
+		font-size: 18px;
+		color: #a2a8ae
+	}
+
+	.team-boxed .social a {
+		color: inherit;
+		margin: 0 10px;
+		display: inline-block;
+		opacity: .7
+	}
+
+	.team-boxed .social a:hover {
+		opacity: 1
+	}
+
+	.team-clean {
+		color: #313437;
+		background-color: #fff
+	}
+
+	.team-clean p {
+		color: #7d8285
+	}
+
+	.team-clean h2 {
+		margin-bottom: 40px;
+		color: inherit
+	}
+
+	@media (max-width:767px) {
+		.team-clean h2 {
+			margin-bottom: 25px;
+			padding-top: 25px;
+			font-size: 24px
+		}
+	}
+
+	.team-clean .intro {
+		font-size: 16px;
+		max-width: 500px;
+		margin: 0 auto
+	}
+
+	.team-clean .intro p {
+		margin-bottom: 0
+	}
+
+	.team-clean .people {
+		padding-bottom: 40px
+	}
+
+	.team-clean .item {
+		text-align: center;
+		padding-top: 50px
+	}
+
+	.team-clean .item .name {
+		font-weight: 700;
+		margin-top: 28px;
+		margin-bottom: 8px;
+		color: inherit
+	}
+
+	.team-clean .item .title {
+		text-transform: uppercase;
+		font-weight: 700;
+		color: #d0d0d0;
+		letter-spacing: 2px;
+		font-size: 13px
+	}
+
+	.team-clean .item .description {
+		font-size: 15px;
+		margin-top: 15px;
+		margin-bottom: 20px
+	}
+
+	.team-clean .item img {
+		max-width: 160px
+	}
+
+	.team-clean .social {
+		font-size: 18px;
+		color: #a2a8ae
+	}
+
+	.team-clean .social a {
+		color: inherit;
+		margin: 0 10px;
+		display: inline-block;
+		opacity: .7
+	}
+
+	.team-clean .social a:hover {
+		opacity: 1
+	}
+</style>
+
+<main class="page project-page">
+	<section class="portfolio-block project" style="padding-bottom: 0px;">
+		<div class="container">
+			<div class="heading">
+				<h2>About us</h2>
+			</div>
+		</div>
+	</section>
+</main>
+<div class="team-boxed">
+	<div class="container">
+		<div class="intro"></div>
+		<div class="row people">
+			<div class="col-md-6 col-lg-6 item">
+				<div class="box">
+					<img class="rounded-circle" src="{% static '/images/jack.jpg' %}">
+					<h3 class="name">Jack Lynch</h3>
+					<p class="description">Jack is a second year student at The Ohio State University studying
+						Information
+						Systems.<br><br>He spent the summer of 2019 working as both a web designer/developer for Paragram, a web development agency, in Northeast Ohio.<br><br>He
+                            also worked as a Technology Instructor at a non-profit called Tech Corps, helping teach underpriveledged K-12 students various technologies such as 3D printing, C# programming and scratch.<br><br>Much of Jack’s skill set lies
+                            in the world of front end web development with the ability to communicate with backend aspects of websites.<br><br>&nbsp;In addition to this, he has gained much experience working with design programs such as the Adobe Creative
+                            Suite through various projects, as well as some organizations he is a part of at OSU.<br></p>
+						<div class="social">
+							<a href="https://www.linkedin.com/in/jack-l-853a3610a/"
+								target="_blank"><i class="fa fa-linkedin" style="font-size: 36px;"></i></a>
+							<a href="https://github.com/jacklynch00?tab=repositories"
+								target="_blank"><i class="fa fa-github" style="font-size: 36px;"></i></a>
+						</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-6 item">
+				<div class="box">
+					<img class="rounded-circle" src="">
+					<h3 class="name">Hady Salama</h3>
+					<p class="description">Lorem ipsum</p>
+					<div class="social">
+						<a href="#"><i class="fa fa-linkedin" style="font-size: 36px;"></i></a>
+						<a href="#"><i class="fa fa-github" style="font-size: 36px;"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -5,33 +5,44 @@
     <div class="container">
         <div class="group">
             <div class="heading">
-                <h2 class="text-center">Actions for You To Take</h2>
+                <h2 class="text-center">Actions To Take</h2>
             </div>
             <div class="item">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3>Center for Disease Control and Prevention</h3>
-                        <h4>Recommendation</h4>
+                    <div class="card">
+                            <div class="card-header">
+                                <h3>Center for Disease Control and Prevention</h3>
+                                <h4>Recommendation</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>{{risk}}</p>
+                                <p>{{actions}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <p>{{risk}}</p>
-                <p>{{actions}}</p>
             </div>
-            <div class="item">
+            <div class="item mt-3">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3>Cleveland Clinic</h3>
-                        <h4>Recommendation</h4>
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Cleveland Clinic</h3>
+                                <h4>Recommendation</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>{{cc_actions}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <p>{{cc_actions}}</p>
             </div>
         </div>
-        <div class="text-center">
-            <a class="btn btn-primary" href="{% url 'home' %}">Take pre-screening test again.</a>
+        <div class="text-center pt-3">
+            <a class="btn btn-primary" href="{% url 'home' %}">Take pre-screening test again</a>
         </div>
     </div>
-
 </section>
 
 {% endblock %}

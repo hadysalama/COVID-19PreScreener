@@ -3,17 +3,27 @@ Created on Thursday 4/9/20 ‏‎1:30:00 AM
 @authors: Hady S. Salama and Jack R. Lynch
 Personal Project
 """
-
+from django.views.generic.base import TemplateView
 from django.shortcuts import render
 
+class Home(TemplateView):
+    template_name = 'dashboard/home.html'
 
-def home(request):
-    risk = ""
-    actions = ""
-    cc_actions = ""
-    gettest = False
+class About(TemplateView):
+    template_name = 'dashboard/about.html'
 
-    if request.method == 'POST':
+class Resources(TemplateView):
+    template_name = 'dashboard/resources.html'
+
+class Actions(TemplateView):
+    template_name = 'dashboard/actions.html'
+
+    def post(self, request, *args, **kwargs):
+        risk = ""
+        actions = ""
+        cc_actions = ""
+        gettest = False
+
         prescreen_checks = request.POST.getlist('covid-check')
 
         # Important symptoms
@@ -110,10 +120,5 @@ def home(request):
                 else:
                     actions = "None"
 
-    context = {'risk': risk, 'actions': actions, 'cc_actions': cc_actions}
-    return render(request, 'dashboard/home.html', context)
-
-
-def actions(request):
-    context = {}
-    return render(request, 'dashboard/actions.html', context)
+        context = {'risk': risk, 'actions': actions, 'cc_actions': cc_actions}
+        return render(request, self.template_name, context)
