@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'COVID_Scanner.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'COVID_PreScreener.settings')
 
 application = get_asgi_application()
