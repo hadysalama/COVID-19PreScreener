@@ -1,0 +1,96 @@
+{% extends 'dashboard/main.html' %}
+{% block content %}
+
+<style>
+    @media screen and (max-width: 770px) {
+        .heading h2 {
+            padding-top: 12%;
+        }
+    }
+</style>
+
+<main class="page">
+        <section class="portfolio-block">
+            <div class="container">
+                <div class="heading" style="margin-bottom: 40px;">
+                    <h2>COVID-19 Pre-Screener</h2>
+                    <p>Select all conditions you are currently or have been experiencing.</p>
+                </div>
+                <form action="{% url 'actions' %}" method="POST">
+                    {% csrf_token %}
+                    <h3>Common Sympotms</h3>
+                    <div class="form-group">
+                        <label for="cough">
+                            <input name="covid-check" value="cough" type="checkbox" style="margin-right: 10px;">Cough</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="sob">
+                            <input name="covid-check" value="sob" type="checkbox" style="margin-right: 10px;">Shortness of Breath</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="fever">
+                            <input name="covid-check" value="fever" type="checkbox" style="margin-right: 10px;">Fever &gt; 100.4</label>
+                    </div>
+
+                    <h3>High Risk Options (select one)</h3>
+                    <div class="form-group">
+                        <select class="form-control">
+                            <optgroup label="Choose what category applies to you">
+                                <option value="none" selected="">None</option>
+                                <option value="36-months">Age &lt; 36 months</option>
+                                <option value="36-months">Age &gt; 60 Years</option>
+                                <option value="immunosuppresive">Immunosuppressive therapy</option>
+                                <option value="cancer">Cancer</option>
+                                <option value="hypertension">Hypertension</option>
+                                <option value="coronary">Coronary Artery Disease</option>
+                                <option value="heart-failure">Heart failure reduced ejection fraction</option>
+                                <option value="lung-disease">Lung Disease</option>
+                                <option value="hiv-aids">HIV/AIDS</option>
+                                <option value="organ-transplant">Solid Organ Transplants</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <h3>Other Factors</h3>
+                    <div class="form-group">
+                        <label for="travel">
+                            <input name="covid-check" value="travel" type="checkbox" style="margin-right: 10px;">Traveled recently to a highly impacted area (past 2 weeks)</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-positive-case">
+                            <input name="covid-check" value="contact-positive-case" type="checkbox" style="margin-right: 10px;">In contact with anyone testing positive for COVID-19*</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="family-contact-positive-case">
+                            <input name="covid-check" value="family-contact-positive-case" type="checkbox" style="margin-right: 10px;">In contact with a family member testing positive for COVID-19 outside healthcare facility</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="follow-precautions">
+                            <input name="covid-check" value="follow-precautions" type="checkbox" style="margin-right: 10px;">Consistently followed precautions recommended by your government</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="within-6-feet-positive-case">
+                            <input name="covid-check" value="within-6-feet-positive-case" type="checkbox" style="margin-right: 10px;">Been in confined space with someone testing positive for COVID-19
+                            <br><strong>(came within 6 feet of the person)</strong></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="more-6-feet-positive-case">
+                            <input name="covid-check" value="more-6-feet-positive-case" type="checkbox" style="margin-right: 10px;">Been in confined space with someone testing positive for COVID-19
+                            <br><strong>(stayed at least 6 feet away the person)</strong></label>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit" name="Submit">Submit</button>
+                    </div>
+                </form>
+                <div class="text-center pt-4">
+                    <h3>Disclaimer</h3>
+                    <p>*Or a case diagnosed clinically with Covid–19 infection outside of the United States who did not have a laboratory testing</p>
+                    <p>**Healthcare provider (HCP) guidance outlines risk categories to determine work exclusion and monitoring procedures. After identifying risk category in the HCP guidance, use the categories outlined here to determine quarantine requirements.</p>
+                    <br>
+                    <p>These examples may not cover all potential exposures to lavatory confirmed cases of COVID-19. If you are concerned about exposure that does not allow these categories, please contact the CDC emergency operation center at one Dash 1-800–232–4636</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

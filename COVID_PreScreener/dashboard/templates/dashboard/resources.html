@@ -1,0 +1,52 @@
+{% extends 'dashboard/main.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+.more-info {
+    margin-top: 15px;
+}
+    .project-card-no-image {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    @media screen and (max-width: 770px) {
+        .heading h2 {
+            padding-top: 12%;
+        }
+    }
+</style>
+
+<main class="page projets-page">
+	<section class="portfolio-block project-no-images">
+		<div class="container">
+			<div class="heading">
+				<h2>Resources</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-lg-4">
+					<div class="project-card-no-image">
+                        <img class="img-fluid" src="{% static '/images/CDC.png' %}">
+                        <a class="btn btn-outline-primary btn-sm more-info" role="button" href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html">See More</a>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="project-card-no-image">
+                        <img class="img-fluid" src="{% static '/images/CCF.png' %}">
+                        <a class="btn btn-outline-primary btn-sm more-info" role="button" href="https://my.clevelandclinic.org/landing/preparing-for-coronavirus" target="_blank">See More</a>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="project-card-no-image">
+                        <img class="img-fluid" src="{% static '/images/WhiteHouse.png' %}">
+						<a class="btn btn-outline-primary btn-sm more-info" role="button" href="https://www.coronavirus.gov/" target="_blank">See More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+{% endblock %}

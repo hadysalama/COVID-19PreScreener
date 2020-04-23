@@ -1,0 +1,59 @@
+{% extends 'dashboard/main.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+    @media screen and (max-width: 770px) {
+        .heading h2 {
+            padding-top: 12%;
+        }
+    }
+</style>
+
+<section class="portfolio-block">
+    <div class="container">
+        <div class="group">
+            <div class="heading">
+                <h2 class="text-center">Actions To Take</h2>
+            </div>
+            <div class="item">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                    <div class="card">
+                            <div class="card-header">
+                                <h3>Center for Disease Control and Prevention</h3>
+                                <img class="img-fluid" style="max-width: 25%;" src="{% static '/images/CDC.png' %}">
+                                <h4>Recommendation</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>{{risk}}</p>
+                                <p>{{actions}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item mt-3">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Cleveland Clinic</h3>
+                                <img class="img-fluid" style="max-width: 25%;" src="{% static '/images/CCF.png' %}">
+                                <h4>Recommendation</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>{{cc_actions}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center pt-3">
+            <a class="btn btn-primary" href="{% url 'home' %}">Take pre-screening test again</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
